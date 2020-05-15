@@ -1,4 +1,11 @@
-  
+/*----------------------------------
+ *
+ * Laboratorio: POO y C++
+ * Fecha: 15-Mayo-2020
+ * Autor: A001701478 Javier Piña Camacho
+ *
+ *----------------------------------*/  
+
 #include <iostream>
 #include <string>
 #include "triangulos.h"

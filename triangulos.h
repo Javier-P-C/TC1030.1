@@ -1,3 +1,11 @@
+/*----------------------------------
+ *
+ * Laboratorio: POO y C++
+ * Fecha: 15-Mayo-2020
+ * Autor: A001701478 Javier Piña Camacho
+ *
+ *----------------------------------*/  
+
 #ifndef TRIANGULOS_H
 #define TRIANGULOS_H
 #include <math.h>
@@ -13,8 +21,6 @@ class Triangulos
     float lado_c;
   public:
     Triangulos();
-    Triangulos(float a, float b);
-    Triangulos(float a, float b, float c);
     float getLado_a() const;
     float getLado_b() const;
     float getLado_c() const;
@@ -56,7 +62,7 @@ void Triangulos::setLado_b(float b)
 {
   lado_b=b;
 }
-    
+
 void Triangulos::setLado_c(float c)
 {
   lado_c=c;
@@ -89,6 +95,5 @@ void Triangulos::MostrarPerimetro()
     cout << "\nNo existe un triángulo isósceles de esas proporciones, para que sea un trángulo isósceles debe cumplir con a+b>c" << endl;
   }
 }
-
 
 #endif
