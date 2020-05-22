@@ -1,3 +1,10 @@
+/*----------------------------------
+ *
+ * Laboratorio: POO y C++
+ * Fecha: 22-Mayo-2020
+ * Autor: A001701478 Javier Piña Camacho
+ *
+ *----------------------------------*/  
 #ifndef OVERNIGHTPACKAGE_H
 #define OVERNIGHTPACKAGE_H
 
