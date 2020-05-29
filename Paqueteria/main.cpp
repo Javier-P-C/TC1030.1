@@ -20,7 +20,7 @@ int main(int argc, char* argv[])
 {
   Package pkg1("Daniel","Lucy",800,3.4);
   TwoDayPackage pkg2("Mara","Roberto",45,2.96,21);
-  5OvernightPackage pkg3("Dante","Virgilio",85,4.2,0.314);
+  OvernightPackage pkg3("Dante","Virgilio",85,4.2,0.314);
   cout<<pkg1.toString();
   cout<<pkg2.toString();
   cout<<pkg3.toString();
