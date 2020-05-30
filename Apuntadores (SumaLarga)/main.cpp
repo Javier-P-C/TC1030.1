@@ -15,12 +15,23 @@ using namespace std;
 int main(int argc, char* argv[])
 {
   BigInteger *c;
-  BigInteger a("2345");
-  BigInteger b("462");
+  //Aquí van los números que quiera sumar
+  BigInteger a("455");
+  BigInteger b("2");
+
   a.MostrarNumero();
   b.MostrarNumero();
+
+  //Aquí se suman
   c=a.Add(b);
+
+  //Linberamos espacio
+  a.~BigInteger();
+  b.~BigInteger();
   cout<<c;
+
+  //Resultado
   c->MostrarNumero();
+
   return 0;
 }
