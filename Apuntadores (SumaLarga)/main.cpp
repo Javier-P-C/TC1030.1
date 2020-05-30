@@ -22,6 +22,5 @@ int main(int argc, char* argv[])
   c=a.Add(b);
   cout<<c;
   c->MostrarNumero();
-  cout<<"wertg";
   return 0;
 }

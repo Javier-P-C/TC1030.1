@@ -10,6 +10,7 @@ class BigInteger{
   private:
     int *numero;
     int size;
+    int *arregloaux;
   public:
     BigInteger(string num);
     BigInteger(BigInteger &bi);
@@ -17,6 +18,7 @@ class BigInteger{
     ~BigInteger();
     BigInteger* Add(BigInteger &a);
     void MostrarNumero();
+    void Ajustar(int num);
 };
 
 BigInteger::BigInteger(string num)
@@ -71,19 +73,72 @@ BigInteger* BigInteger::Add(BigInteger &a)
   cout<<"\n"<<max;
   BigInteger *result = new BigInteger(max);
   cout<<" aaaa";
-	for (int i = 0; i<max+1; i++) {
+  if (a.size<size)
+    {
+      a.Ajustar(max);
+    }
+  for(int i=0;i<a.size;i++)
+  {
+    cout<<"\n"<<a.arregloaux[i]<<"llegada";
+  }
+  cout<<" aaaa"<<endl;
+	for (int i = 0; i<max+1; i++) 
+  {
     cout<<" aaaa"<<endl;
-    borrar = numero[i] + a.numero[i];
-    cout<<borrar;
-		result->numero[i+1] = numero[i] + a.numero[i];
-    cout<<result->numero[i]<<"\n";
+    //borrar = numero[i] + a.numero[i];
+    //cout<<borrar;
+		result->numero[i+1] = numero[i] + a.arregloaux[i];
+    cout<<result->numero[max-i+1]<<"\n";
 	}
+  for (int i = 0; i<max+1; i++) 
+  {
+    cout<<" cccc"<<endl;
+    //borrar = numero[i] + a.numero[i];
+    //cout<<borrar;
+    cout<<result->numero[i]<<"t\n";
+	}
+  for (int i = 0; i<max+1; i++)
+  {
+    if((i>0)&&(result->numero[i]>9))
+    {
+      result->numero[i-1]++;
+      result->numero[i]-=10;
+    }
+  }
 	return result;
 }
+
 void BigInteger::MostrarNumero(){
   cout<<" mostrar ";
   for(int i=0;i<size;i++){
     cout<<numero[i]<<"hjk ";
   }
 } 
+
+void BigInteger::Ajustar(int max)
+{
+  arregloaux=new int[max];
+  int aux;
+  cout<<"max"<<max<<"size"<<size<<endl;
+  aux=max-size;
+  for(int i=0;i<max;i++)
+  {
+    if(i<aux){
+      cout<<"menor";
+      arregloaux[i]=0;
+    }
+    else{
+      arregloaux[i]=numero[i-aux];
+    }
+  }
+  cout<<"Ajuste"<<endl;
+  for(int i=0;i<max;i++){
+    cout<<arregloaux[i]<<" ";
+  }
+  size=max;
+  for(int i=0;i<size;i++){
+    cout<<arregloaux[i]<<"FIN";
+  }
+  delete [] numero;
+}
 #endif
