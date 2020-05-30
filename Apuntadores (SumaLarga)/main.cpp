@@ -16,11 +16,11 @@ int main(int argc, char* argv[])
 {
   BigInteger *c;
   //Aquí van los números que quiera sumar
-  BigInteger a("455");
-  BigInteger b("2");
+  BigInteger a("3562138565");
+  BigInteger b("2147483647");
 
-  a.MostrarNumero();
-  b.MostrarNumero();
+  //a.MostrarNumero();
+  //b.MostrarNumero();
 
   //Aquí se suman
   c=a.Add(b);
@@ -28,7 +28,7 @@ int main(int argc, char* argv[])
   //Linberamos espacio
   a.~BigInteger();
   b.~BigInteger();
-  cout<<c;
+  //cout<<c;
 
   //Resultado
   c->MostrarNumero();

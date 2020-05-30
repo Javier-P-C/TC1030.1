@@ -32,10 +32,6 @@ BigInteger::BigInteger(string num)
     aux2=stoi(aux1);
     numero[i]=aux2;
   }
-  for(int i=0;i<size;i++){
-    cout<<numero[i]<<" ";
-  }
-  cout<<""<<endl;
   arregloaux=NULL;
 }
 
@@ -45,10 +41,6 @@ BigInteger::BigInteger(int num)
   numero = new int[size];
   for(int i= size-1;i>=0;i--){
     numero[i]=0;
-    cout<<"bbbb"<<endl;
-  }
-  for(int i=0;i<size;i++){
-    cout<<numero[i]<<" Hola";
   }
   arregloaux=NULL;
 }
@@ -66,9 +58,7 @@ BigInteger* BigInteger::Add(BigInteger &a)
 {
   int borrar;
   int max= (size > a.size)? size : a.size;
-  cout<<"\n"<<max;
   BigInteger *result = new BigInteger(max);
-  cout<<" aaaa";
   if((a.size<size)||(a.size==size))
   {
     if (a.size<size)
@@ -81,39 +71,20 @@ BigInteger* BigInteger::Add(BigInteger &a)
       bool opcion = false;
         a.Ajustar(max, opcion);
     }
-    for(int i=0;i<a.size;i++)
-    {
-      cout<<"\n"<<a.arregloaux[i]<<"llegada";
-    }
-    cout<<" aaaa"<<endl;
     for (int i = 0; i<max+1; i++) 
     {
-      cout<<" aaaa"<<endl;
       result->numero[i+1] = numero[i] + a.arregloaux[i];
-      cout<<result->numero[max-i+1]<<"\n";
     }
   }
   else
   {
     bool opcion = true;
     Ajustar(max, opcion);
-    for(int i=0;i<size;i++)
-    {
-      cout<<"\n"<<arregloaux[i]<<"llegada";
-    }
-    cout<<" aaaa"<<endl;
     for (int i = 0; i<max+1; i++) 
     {
-      cout<<" aaaa"<<endl;
       result->numero[i+1] = a.numero[i] + arregloaux[i];
-      cout<<result->numero[max-i+1]<<"\n";
     }
   }
-  for (int i = 0; i<max+1; i++) 
-  {
-    cout<<" cccc"<<endl;
-    cout<<result->numero[i]<<"t\n";
-	}
   for (int i = 0; i<max+1; i++)
   {
     if((i>0)&&(result->numero[i]>9))
@@ -126,10 +97,10 @@ BigInteger* BigInteger::Add(BigInteger &a)
 }
 
 void BigInteger::MostrarNumero(){
-  cout<<" mostrar ";
   for(int i=0;i<size;i++){
-    cout<<numero[i]<<"hjk ";
+    cout<<numero[i];
   }
+  cout<<endl;
 } 
 
 void BigInteger::Ajustar(int max,bool opcion)
@@ -138,13 +109,11 @@ void BigInteger::Ajustar(int max,bool opcion)
   int aux;
   if(opcion==true)
   {
-    cout<<"max"<<max<<"size"<<size<<endl;
     aux=max-size;
     for(int i=0;i<max;i++)
     {
       if(i<aux)
       {
-        cout<<"menor";
         arregloaux[i]=0;
       }
       else
@@ -152,16 +121,7 @@ void BigInteger::Ajustar(int max,bool opcion)
         arregloaux[i]=numero[i-aux];
       }
     }
-    cout<<"Ajuste"<<endl;
-    for(int i=0;i<max;i++)
-    {
-      cout<<arregloaux[i]<<" ";
-    }
     size=max;
-    for(int i=0;i<size;i++)
-    {
-      cout<<arregloaux[i]<<"FIN";
-    }
   }
   else
   {
